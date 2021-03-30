@@ -10,9 +10,13 @@
 	<!-- Define your beans here -->
 	<bean id="myFortuneService" class="com.springdemo.HappyFortuneService"></bean>
 	
-	<bean id="myCoach" class="com.springdemo.BaseballCoach">
+	<bean id="myCoach" class="com.springdemo.TrackCoach">
 	<constructor-arg ref="myFortuneService"></constructor-arg>
 	</bean>
+	<bean id="cricketCoach" class = "com.springdemo.CricketCoach">
+		<property name="fortuneService" ref="myFortuneService"></property>
+	</bean>
+	
 
 	<!-- Add a logger config to see logging messages. - For more detailed logs, 
 		set values to "FINEST" - For info on logging levels, see: http://www.vogella.com/tutorials/Logging/article.html -->
